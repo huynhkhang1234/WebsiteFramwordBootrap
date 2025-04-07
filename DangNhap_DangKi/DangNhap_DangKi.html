@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="DangNhap_DangKi.css">    
+    <!-- Jquery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>    
+</head>
+
+<body>
+    <nav class="navbar2">
+        <p class="brand2">
+            Trang chủ
+        </p>
+        <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <ul class="nav-list">
+        <li class="link" style="color: blue;">Đăng nhập</li>
+        <li class="link " style="color: blue;">Đăng kí </li>
+        <li class="link" style="color: blue;">Đổi mật khẩu</li>
+        <li class="link" style="color: blue;">Cập nhật hồ sơ</li>
+
+    </ul>
+
+    <header class="page-container">
+        <span class="overlay"></span>
+        <!-- khi lựa chọn đăng nhập -->
+        <section class="page home active">
+            <!-- <p class="title">Đăng nhâp</p> -->
+            <!-- dang nhap -->
+            <form class="form_login">
+                <div class="form-group header_baner">
+                    <img class="img_logo" src="images/logo.png" alt="">
+                    <div class="form-group heading_baner">
+                        <span>Đăng nhập</span>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label for="exampleInputEmail1"></label>
+                    <input class="form-control" id="exampleInputEmail1" placeholder="Tên đăng nhập">
+                    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <br>
+                <div class="form-group has-feedback">
+                    <label for="exampleInputPassword1"></label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <br>
+                <div class="form-inline">
+                    <div class="form-group">
+                        <div>
+                            <label>
+                                <input type="checkbox" class="checkbox"> Ghi nhớ tôi
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">
+                            <span>Đổi mật khẩu ?</span>
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="submit">Đăng nhập</button>
+            </form>
+
+        </section>
+        <!-- form dang ki -->
+        <section class="page project">
+            <form class="form_login form-project ">
+
+                <div class="form-group header_baner">
+                    <img class="img_logo" src="images/logo.png" alt="">
+
+                    <div class="form-group heading_baner">
+                        <span>Đăng kí</span>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label for="exampleInputEmail1"></label>
+                    <input class="form-control" placeholder="Tên đăng nhập">
+                    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label for="exampleInputPassword1"></label>
+                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+                    <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <!-- số điện thoại -->
+                <div class="form-group has-feedback">
+                    <label for="exampleInputEmail1"></label>
+                    <input class="form-control" placeholder="Số điện thoại">
+                    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label for="exampleInputPassword1"></label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu">
+                    <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label for="exampleInputPassword1"></label>
+                    <input type="password" class="form-control" id="exampleInputPassword1"
+                        placeholder="Xác nhận mật khẩu">
+                    <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="submit">Đăng kí</button>
+            </form>
+        </section>
+        <!--Đổi mật khẩu -->
+        <section class="page about">
+            <form class="form_login about ">
+                <div class="form-group header_baner">
+                    <img class="img_logo" src="images/logo.png" alt="">
+                    <div class="form-group heading_baner">
+                        <span>Đổi mật khẩu</span>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label for="exampleInputEmail1"></label>
+                    <input class="form-control" placeholder="Tên đăng nhập">
+                    <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label for="exampleInputPassword1"></label>
+                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+                    <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label for="exampleInputPassword1"></label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu">
+                    <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label for="exampleInputPassword1"></label>
+                    <input type="password" class="form-control" id="exampleInputPassword1"
+                        placeholder="Nhập mật khẩu mới">
+                    <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label for="exampleInputPassword1"></label>
+                    <input type="password" class="form-control" id="exampleInputPassword1"
+                        placeholder="Xác nhận mật khẩu mới">
+                    <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                </div>
+
+                <br>
+                <button type="submit" class="submit">Đổi mật khẩu</button>
+            </form>
+        </section>
+        <!-- Thông tin cá nhân -->
+        <section class="page  preson ">
+            <form class="form-horizontal ">
+                <h2 style="text-align: center; color: #fff; margin-bottom: 20px;">Thông tin cá nhân</h2>
+
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">Họ và tên</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail3">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail3">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">Số điện thoại</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputEmail3">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">Mật khẩu</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputPassword3">
+                    </div>
+                </div>
+
+                <div class="form-group " style="text-align:right;">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">
+                            <a class="hover" href="" style="text-decoration: none; color: #000;">Trở lại</a>
+                        </button>
+                        <button type="submit" class="btn btn-default btn-success">Cập nhật</button>
+
+                    </div>
+                </div>
+                <!--  -->
+
+            </form>
+        </section>
+
+
+        <script src="DangKi_DangNhap.js"></script>
+
+</body>
+
+</html>

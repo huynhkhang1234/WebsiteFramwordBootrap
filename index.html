@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="stylesheet" href="css_trangChu.css/index.css"> -->
+    <!-- Jquery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <!-- angularjs -->
+    <script src="js/angular.min.js"></script>
+
+    <script src="js/angular-route.js"></script>
+    <!-- aos animations-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Assignment giai doan 1</title>
+    <!-- link css -->
+    <link rel="stylesheet" href="DangNhap_DangKi/DangNhap_DangKi.css">
+    <style>
+        .transition {
+            display: block;
+            top: -20px;
+            margin-top: 20px !important;
+            transition: margin-top 1s ease;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            transition-delay: 0s;
+            transition-property: margin-top;
+            position: fixed;
+            right: 0;
+            left: 0;
+            z-index: 1030
+        }
+    </style>
+</head>
+
+
+<body ng-app="myApp">
+    <nav class="navbar navbar-default " id="navbar"
+        style="padding: 8px 0px; margin: 0; width: 100%; z-index: 10; background-color: #13314d; border-radius: 0px; border: none;">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- logo -->
+                <!-- <a class="navbar-brand" href="#">
+                    <img src="https://codelearn.io/Themes/TheCodeCampPro/Resources/Images/new-header/codelearn-logo.png" alt="">
+                    
+                </a> -->
+            </div>
+            <!--thành phần tiếp theo trong nav  -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <!-- <li><a href="#" data-activates="slide-out" class="button-collapse">
+                            <span class="glyphicon glyphicon-th-list"></span>
+                        </a>
+                    </li> -->
+                    <li><a href="#trangChu"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
+                    <li><a href="#gioiThieu"><span class="glyphicon glyphicon-th-list"></span> Giới thiệu</a></li>
+                    <li><a href="#sanPham"><span class="glyphicon glyphicon-plus"></span> Sản phẩm</a></li>
+                    <li><a href="#footer"><span class="glyphicon glyphicon-earphone"></span> Liên hệ</a></li>
+                    <li><a href="#gopY"><span class="glyphicon glyphicon-envelope"></span> Góp ý</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                                class="glyphicon glyphicon-user"></span> Tài
+                            khoản <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="DangNhap_DangKi/DangNhap_DangKi.html">Đăng nhập</a></li>
+                            <!-- <li><a href="">Quên mật khẩu</a></li> -->
+                            <li><a href="DangNhap_DangKi/DangNhap_DangKi.html">Đăng ký thành viên</a></li>
+                            <li class="divider"></li>
+                            <li><a href="DangNhap_DangKi/DangNhap_DangKi.html">Đăng xuất</a></li>
+                            <li><a href="DangNhap_DangKi/DangNhap_DangKi.html">Đổi mật khẩu</a></li>
+                            <li><a href="DangNhap_DangKi/DangNhap_DangKi.html">Cập nhật hồ sơ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+                <ul class="nav navbar-nav navbar-right" style="margin-top: 5px;">
+
+                    <li class="item_Logo" style="position: relative;">
+                        <span class="glyphicon glyphicon-search search" style="color: blue; margin-top: -18px;"></span>
+                        <input type="text" class="timKiem" placeholder="Tìm kiếm khóa học, bài viết,..">
+                    </li>
+                    <li><button class="login">
+                            <a href="DangNhap_DangKi/DangNhap_DangKi.html">Đăng nhập</a>
+                        </button></li>
+                </ul>
+
+            </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- phần sản phẩm -->
+    <div class="container" style="width: 100%; height: 100%;text-align: left; margin: 0; padding: 0;">
+        <div ng-view>
+
+        </div>
+        <!--       slide show       -->
+        <div class="row header">
+            <div class="img" style="background: #fff;">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active rotate">
+                            <img src="/images/Baner_2.jpg" alt="...">
+                            <div class="carousel-caption">
+                                ...
+                            </div>
+                        </div>
+                        <div class="item rotate" style="border-radius: 50%;">
+                            <img src="/images/Baner_3.jpg" alt="...">
+                            <div class="carousel-caption">
+                                ...
+                            </div>
+                        </div>
+                        <div class="item rotate">
+                            <img src="/images/Baner_4.jpg" alt="...">
+                            <div class="carousel-caption">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- than chuaw trinh -->
+
+        <!-- phần giới thiệu -->
+        <div ng-view data-aos="fade-up" class="HomePageDesktopBanner-wrapper " id="ninequiz"
+            style="position: relative;display: flex; height: 500px;">
+            <div class="MuiContainer-root MuiContainer-maxWidthLg" style="width: 100%;">
+                <div class="MuiGrid-root homepage-banner MuiGrid-container MuiGrid-spacing-xs-5">
+                    <div class="MuiGrid-root short-description MuiGrid-item MuiGrid-grid-md-6 MuiGrid-grid-lg-6"
+                        style="text-align: left;padding-left: 40px;">
+                        <h1>Vì Sao Nên Dùng<br>
+                            <span class="short-description--highlight">Ninequiz</span>
+                        </h1>
+                        <div class="short-description__subtext-box-wrapper">
+                            <div class="short-description__subtext-box" style="display: flex; ">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Tạo bài kiểm tra online cho trắc nghiệm và tự luận</p>
+                            </div>
+                            <div class="short-description__subtext-box">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Tự động trộn câu hỏi trắc nghiệm</p>
+                            </div>
+                            <div class="short-description__subtext-box">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Tự động chấm bài trắc nghiệm</p>
+                            </div>
+                            <div class="short-description__subtext-box">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Hỗ trợ soạn câu hỏi với công thức toán học</p>
+                            </div>
+                            <div class="short-description__subtext-box">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Quản lý và chia sẻ thư viện câu hỏi cho nhiều người dùng</p>
+                            </div>
+                        </div><button class="MuiButtonBase-root MuiButton-root MuiButton-contained register-button"
+                            tabindex="0" type="button"><span class="MuiButton-label" style="color: #fff;">Đăng ký miễn
+                                phí</span><span class="MuiTouchRipple-root"></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="homepage-banner-background" style="background-image: url('images/banner-bg.24844762.png');            z-index: -1;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            bottom: 40px;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 50%;">
+            </div> -->
+
+        </div>
+        <!-- phần mô tả -->
+        <div data-aos="fade-up" class="homepage-description-wrapper">
+            <h1 class="primary-text">Ninequiz là gì?</h1>
+            <h2 class="sub-text">Ninequiz là ứng dụng tạo bài kiểm tra và quản lý bài kiểm tra online với nhiều tính
+                năng và dạng câu hỏi phù hợp cho cả thi trắc nghiệm và tự luận. <br> Ninequiz giúp bạn tiết kiệm thời
+                gian và công sức soạn và chấm bài kiểm tra</h2>
+        </div>
+        <!-- phần chỉ dẫn -->
+        <div class="MuiContainer-root MuiContainer-maxWidthLg" data-aos="flip-left"> -->
+            <div class="MuiGrid-container">
+                <div class="MuiGrid-container" style="display: flex;flex-wrap: nowrap">
+                    <div
+                        class="MuiGrid-root feature-image MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-grid-md-7 MuiGrid-grid-lg-7">
+                        <img src="/images/BaiThi.png" alt="">
+                    </div>
+                    <div
+                        class="MuiGrid-root feature-description MuiGrid-item MuiGrid-align-items-xs-center MuiGrid-grid-md-5 MuiGrid-grid-lg-5">
+                        <h1 class="feature-title">Dễ dàng tạo bài thi online với nhiều dạng câu hỏi</h1>
+                        <div class="feature-description__list-box-item">
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+
+                                <p>Tạo bài kiểm tra với nhiều dạng câu hỏi</p>
+                            </div>
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Câu hỏi chọn 1 kết quả</p>
+                            </div>
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Câu hỏi chọn nhiều kết quả</p>
+                            </div>
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Trả lời đoạn văn ngắn</p>
+                            </div>
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Trả lời bằng cách upload file (Hình ảnh, word, video)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- phần hướng dẫn -->
+                <div class="MuiGrid-container" style="display: flex; flex-wrap: nowrap;" data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom">
+                    <div class="MuiGrid-root feature-description MuiGrid-item MuiGrid-grid-md-6 MuiGrid-grid-lg-6">
+                        <h1 class="feature-title">Lên trước lịch làm bài hoặc giới hạn thời gian làm bài thi</h1>
+                        <div class="feature-description__list-box-item">
+                            <div class="feature-description__box-item" style="align-items: flex-start;">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <div>
+                                    <p>Bạn có thể cài đặt thời gian để học sinh chỉ làm bài trong khung thời gian qui
+                                        định:</p>
+                                    <ul class="feature-description__list-subtext">
+                                        <li>
+                                            <p>Qui định thời gian cho bài làm ( 10’, 15’, 45’...)</p>
+                                        </li>
+                                        <li>
+                                            <p>Qui định thời gian có thể bắt đầu làm bài</p>
+                                        </li>
+                                        <li>
+                                            <p>Qui định thời gian kết thúc hiệu lực làm bài</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Hoặc bỏ cài đặt thời gian để học sinh có thể làm bài bất kì lúc nào cho đến khi nộp
+                                    bài thành công</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="MuiGrid-root feature-image MuiGrid-item MuiGrid-grid-md-6 MuiGrid-grid-lg-6"><img
+                            src="/images/Baithi_2.png" alt=""></div>
+                </div>
+                <div class="MuiGrid-container" style="display: flex; flex-wrap: nowrap;" data-aos="fade-up">
+                    <div class="MuiGrid-root feature-image MuiGrid-item MuiGrid-grid-md-6 MuiGrid-grid-lg-6"><img
+                            src="/images/BaiThi3.png" alt=""></div>
+                    <div class="MuiGrid-root feature-description MuiGrid-item MuiGrid-grid-md-6 MuiGrid-grid-lg-6">
+                        <h1 class="feature-title">Chia sẻ bài thi và quản lý user có thể làm bài thi</h1>
+                        <div class="feature-description__list-box-item">
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Chia sẻ public: Bạn chỉ việc sao chép đường dẫn chia sẻ và gửi cho đối tượng cần làm
+                                    bài thi hoặc tải và chia sẻ qr code cho học sinh quét qr code truy cập trực tiếp vào
+                                    bài thi</p>
+                            </div>
+                            <div class="feature-description__box-item" style="align-items: flex-start;"> <span
+                                    class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <div>
+                                    <p>Bạn có thể quản lý bài kiểm tra với từng nhóm hoặc lớp bằng cách tạo lớp và thêm
+                                        học sinh vào lớp</p>
+                                    <ul class="feature-description__list-subtext">
+                                        <li>
+                                            <p>Quản lý nhóm và lên lịch thi riêng cho từng nhóm, user ngoài danh sách
+                                                chỉ định sẽ không truy cập bài thi được</p>
+                                        </li>
+                                        <li>
+                                            <p>Khi triển khai bài thi chỉ định user thì các user sẽ nhận được thông báo
+                                                về bài thi</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="MuiGrid-container" style="display: flex; flex-wrap: nowrap; " data-aos="fade-up">
+                    <div class=" MuiGrid-root feature-description MuiGrid-item MuiGrid-grid-md-6 MuiGrid-grid-lg-6">
+                        <h1 class="feature-title">Học sinh làm bài không cần cài đặt thêm ứng dụng</h1>
+                        <div class="feature-description__list-box-item">
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Học sinh dể dàng truy cập và làm bài thi mà không cần cài đặt thêm ứng dụng</p>
+                            </div>
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Giao diện làm bài kiểm tra trực quan và dể tương tác</p>
+                            </div>
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Giao diện tuỳ biến theo kích thước màn hình mà không làm thay đổi chất lượng hình ảnh
+                                </p>
+                            </div>
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Chỉ cần scan qr code bài thi hoặc truy cập link bài thì và làm bài mà không cần cài
+                                    đặt ứng dụng</p>
+                            </div>
+                            <div class="feature-description__box-item">
+                                <span class="glyphicon glyphicon-ok" style="color: blueviolet;"></span>
+                                <p>Trả lời bài thi tự luận bằng cách chụp ảnh bài làm hoặc upload file word</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="MuiGrid-root feature-image MuiGrid-item MuiGrid-grid-md-6 MuiGrid-grid-lg-6">
+                        <img src="images/BaiThi4.png" alt="">
+                    </div>
+                </div>
+
+                <!-- Phan gioi thieu -->
+                <section id="about" class="bg-light text-center">
+
+                    <div class="row" style="margin: 0; padding: 0;">
+                        <div class="col-12 intro text-center" data-aos="fade-up">
+                            <h2>Tại sao lại chọn chúng tôi?</h2>
+                            <div class="divider"></div>
+                            <p> Ứng dụng tạo bài kiểm tra và quản lý bài kiểm tra online với nhiều tính năng và dạng câu
+                                hỏi
+                                phù
+                                hợp cho cả thi trắc nghiệm và tự luận.</p>
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="row g-4" style="margin: 0;" data-aos-delay="500" data-aos="fade-up"
+                        data-aos-duration="1000">
+
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="feature-box " style="border-radius: 5px;">
+                                <div class="icon-box">
+                                    <span class="glyphicon glyphicon-home"></span>
+                                </div>
+                                <h5>Trang web ứng dụng uy tính</h5>
+                                <p>
+                                    Bên cạnh nội dung và trải nghiệm người dùng, mức độ an toàn và uy tín của website
+                                    cũng
+                                    đóng
+                                    vai trò quan trọng và An toàn 100% bảo vệ tài khoản của bạn không bị khoá
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="feature-box">
+                                <div class="icon-box"><span class="glyphicon glyphicon-star"></span></div>
+                                <h5>Lượt đánh giá sao </h5>
+                                <p>
+                                    Ứng dụng đơn giản dễ dùng và hiện đại dễ dàng cho bạn thao tác
+                                    Nhiều chức năng đa dạng dành cho: Facebook, Youtube, Tiktok, Shopee, Instagram…
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="feature-box">
+                                <div class="icon-box"><span class="glyphicon glyphicon-heart"></span></div>
+                                <h5>Lượt yêu thích</h5>
+                                <p>
+                                    Bạn có thể quản lý mục Yêu thích bất cứ lúc nào. Bạn bè và Trang sẽ không nhận được
+                                    thông
+                                    báo nếu bạn thêm hoặc gỡ họ. Bạn không thể thêm nhóm vào mục Yêu thích.
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="feature-box">
+                                <div class="icon-box"><span class="glyphicon glyphicon-comment"></span></div>
+                                <h5>Trải nghiệm mượt mà</h5>
+                                <p>
+                                    Cung cấp hiệu suất mạnh mẽ hơn, mang lại cho bạn trải nghiệm người dùng mượt mà và
+                                    tuyệt
+                                    vời
+                                    hơn.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="feature-box">
+                                <div class="icon-box"><span class="glyphicon glyphicon-download-alt"></span></div>
+                                <h5>Lượt tải nhiều nhất</h5>
+                                <p>
+                                    Thể loại: Phổ thông
+                                    Nền tảng: Android, iOS, Windows
+                                    Năm phát hành: 2015
+                                    Nhà phát hành: Rovio Entertainment Corporation
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="feature-box">
+                                <div class="icon-box"><span class="glyphicon glyphicon-check"></span></div>
+                                <h5>Tìm kiếm an toàn</h5>
+                                <p>
+                                    Tính năng Tìm kiếm an toàn tác dụng đối với các kết quả tìm kiếm trên Google. Tính
+                                    năng này sẽ giúp tìm kiếm nhanh hơn an toàn hơn.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- Phần đăng nhập -->
+                <section class="page home active">
+                    <!-- dang nhap -->
+                    <form class="form_login" style="padding: 20px;">
+                        <div class="form-group header_baner">
+                            <img class="img_logo" src="images/logo-login.22778f99.png" alt="">
+                            <div class="form-group heading_baner">
+                                <span>Đăng nhập</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback" style="margin: 0; padding: 0;">
+                            <label for="exampleInputEmail1"></label>
+                            <input class="form-control " id="exampleInputEmail1" placeholder="Tên đăng nhập"
+                                width="100%">
+                            <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                        </div>
+                        <br>
+                        <div class="form-group has-feedback" style="margin:0; padding: 0;">
+                            <label for="exampleInputPassword1"></label>
+                            <input width="100%" type="password" class="form-control " id="exampleInputPassword1"
+                                placeholder="Password">
+                            <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="form-group" style="text-align: right; margin-right: 30px; margin-top: 5px;">
+                            <label for="">
+                                <span>Đổi mật khẩu ?</span>
+                            </label>
+                        </div>
+                        <div class="form-group"
+                            style="display: flex;align-items: center; right; margin-right: 30px; margin-top: 5px;">
+                            <div style="flex-grow: 1; border-bottom: 1px solid rgb(187, 187, 187);"></div>
+                            <span
+                                style="color: #fff; font-size: 16px; padding-left: 8px; padding-right: 8px;">Hoặc</span>
+                            <div style="flex-grow: 1; border-bottom: 1px solid rgb(187, 187, 187);"></div>
+                        </div>
+
+                        <div class="form-group" style="text-align: center;">
+                            <button type="button">
+                                <span><img src="images/google-icon.0c293cce.png" alt="gg-icon"><span
+                                        style=" width: 100%; font-size: 12px; font-weight: 600; color: yellowgreen; margin-left: 20px;">Đăng
+                                        nhập bằng google</span></span><span class="MuiTouchRipple-root"></span></button>
+                        </div>
+                        <br>
+                        <div class="form-group  " style="margin: 0; padding: 0;">
+                            <button type="submit" class="submit" style="width: 100%; margin: 0; padding: 0;">Đăng
+                                nhập</button>
+                        </div>
+
+                    </form>
+
+                </section>
+                <br>
+                <!--đăng kí  -->
+                <section class="page project ">
+                    <form class="form_login form-project ">
+
+                        <div class="form-group header_baner">
+                            <img class="img_logo" src="images/logo-login.22778f99.png" alt="">
+
+                            <div class="form-group heading_baner">
+                                <span>Đăng kí</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="exampleInputEmail1"></label>
+                            <input class="form-control" placeholder="Tên đăng nhập">
+                            <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="exampleInputPassword1"></label>
+                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+                            <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                        </div>
+                        <!-- số điện thoại -->
+                        <div class="form-group has-feedback">
+                            <label for="exampleInputEmail1"></label>
+                            <input class="form-control" placeholder="Số điện thoại">
+                            <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label for="exampleInputPassword1"></label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Mật khẩu">
+                            <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="exampleInputPassword1"></label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Xác nhận mật khẩu">
+                            <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                        </div>
+                        <br>
+                        <br>
+                        <button type="submit" class="submit">Đăng kí</button>
+                    </form>
+                </section>
+                <!--Thông tin cá nhân  -->
+                <section class="page  preson ">
+                    <form class="form-horizontal ">
+                        <h2 style="text-align: center; color: #fff; margin-bottom: 20px;">Thông tin cá nhân</h2>
+
+                        <div class="form-group">
+                            <label for="" class="col-sm-2 control-label">Họ và tên</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="col-sm-2 control-label">Số điện thoại</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Mật khẩu</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword3">
+                            </div>
+                        </div>
+
+                        <div class="form-group " style="text-align:right;">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">
+                                    <a class="hover" href="" style="text-decoration: none; color: #000;">Trở lại</a>
+                                </button>
+                                <button type="submit" class="btn btn-default btn-success">Cập nhật</button>
+
+                            </div>
+                        </div>
+                        <!--  -->
+
+                    </form> -->
+                </section>
+
+                <!-- Đổi mật khẩu -->
+                <section class="page about">
+                    <form class="form_login about ">
+                        <div class="form-group header_baner">
+                            <img class="img_logo" src="images/logo.png" alt="">
+                            <div class="form-group heading_baner">
+                                <span>Đổi mật khẩu</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="exampleInputEmail1"></label>
+                            <input class="form-control" placeholder="Tên đăng nhập">
+                            <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="exampleInputPassword1"></label>
+                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+                            <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="exampleInputPassword1"></label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Mật khẩu">
+                            <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="exampleInputPassword1"></label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Nhập mật khẩu mới">
+                            <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <label for="exampleInputPassword1"></label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Xác nhận mật khẩu mới">
+                            <span class="glyphicon glyphicon-tint form-control-feedback" aria-hidden="true"></span>
+                        </div>
+
+                        <br>
+                        <button type="submit" class="submit">Đổi mật khẩu</button>
+                    </form>
+                </section>
+                <!-- </section>
+        <!-- phần thân của web -->
+                <div class="row magin_body" id="sanPham">
+                    <article class="col-sm-9  article_Left" style="padding-top: 24px; text-align: center;">
+                        <!-- khi đặt cái repeat sẽ lập lại thêm 1 cái theo vòng lập -->
+                        <div class="col-sm-4" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"
+                            ng-repeat="sub in listDanhMuc">
+                            <div class="panel panel-default panel_hover">
+                                <!-- chứa hình ảnh và 1 số cái đơn giản khác -->
+                                <div class="padding_produrt box-hover">
+                                    <img src="images/logos/{{sub.Logo}}" alt="" class="img-change">
+                                    <!-- san pham yeu thich -->
+                                    <div class="home-product-item-favourite">
+                                        <span class="glyphicon glyphicon glyphicon-ok magin_left_icon"></span>
+                                        <span> Yêu thích</span>
+                                    </div>
+                                    <!-- giam gia -->
+                                    <div class="home-product-item__sale-off ">
+                                        <span class="home-product-item__sale-off-percent">
+                                            50
+                                        </span>
+                                        <span class="home-product-item__sale-off-lable">
+                                            CÂU
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- Phần này là nội dụng -->
+                                <div class="name_price_product">
+                                    <div class="panel-heading bg-success">
+                                        <!-- GỌi đến sub để repeat name lại -->
+                                        <div class="panel-title">
+                                            <p><a href="#">{{sub.Name}}</a></p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="price-wrapper">
+                                <span class="price_amoun"><del><span>9,00,000&nbsp;<span>₫</span></span></del>
+                                    <ins><span>3,000,000&nbsp;<span>₫</span></span></ins></span>
+                            </div> -->
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </article>
+                    <!-- aside bên phải web -->
+                    <aside class="col-sm-3" style="text-align: left;  padding-top: 24px;" data-aos="fade-right"
+                        data-aos-offset="300" data-aos-easing="ease-in-sine">
+                        <!--/CartInfo-->
+                        <div class="panel-group" id="accordion">
+                            <style>
+                                #accordion .panel-heading {
+                                    cursor: pointer;
+                                }
+                            </style>
+                            <!--Category-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseOne">
+                                    <span class="glyphicon glyphicon-th-list"></span>
+                                    <strong>Danh mục</strong>
+                                </div>
+                                <div id="collapseOne" class="list-group panel-collapse collapse in"
+                                    ng-controller="myCtr">
+                                    <!-- <a href="#" class="list-group-item">Điện thoại di động</a> -->
+
+                                    <div ng-repeat="sub in listDanhMuc">
+                                        <a href="#" class="list-group-item">{{sub.Name}}</a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <!--/Special-->
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- phần cuối trang -->
+
+                <!--  -->
+                <footer class="footer col-sm-12" id="footer" data-aos="fade-up"
+                    data-aos-anchor-placement="center-bottom">
+
+                </footer>
+
+                <script src="js/app.js"></script>
+                <script src="app/myApp.js"></script>
+                <!-- aos annimate -->
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <script>
+                    AOS.init();
+                </script>
+</body>
+
+
+</html>
